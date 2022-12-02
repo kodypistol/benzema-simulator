@@ -1,0 +1,500 @@
+/** Import fonts on local public folder .ttf **/ 
+@font-face {
+  font-family: 'Dimbo';
+  src: url('/assets/fonts/DimboRegular.woff') format('truetype');
+}
+
+/** General **/
+
+::selection {
+    background: #000;
+    color: #fff;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    // overflow: hidden;
+}
+
+#webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+button {
+    font-family: 'Dimbo';
+    font-size: 58px;
+    color: #fff;
+    background: linear-gradient(180deg, #FBCE51 45.36%, #FCBB2B 52.66%);
+    border: 2px solid #000000;
+    box-shadow: inset 0px -8px 6px #A86811;
+    border-radius: 10px;
+    padding: 7px 48px 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    > span {
+        -webkit-text-stroke: 2px #000000;
+        text-shadow: 0px 2px 0px #000000;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dimbo';
+    font-weight: normal;
+    font-size: 58px;
+    color: #fff;
+    -webkit-text-stroke: 2px #000000;
+    text-shadow: 0px 2px 0px #000000;
+    user-select: none;
+}
+
+h1 {
+    @media screen and (max-width: 768px) {
+        font-size: 36px;
+    }
+}
+
+p {
+    font-family: 'Dimbo';
+    font-size: 36px;
+    color: #fff;
+    -webkit-text-stroke: 2px #000000;
+    text-shadow: 0px 2px 0px #000000;
+    user-select: none;
+}
+
+
+/** ********* **/
+
+/** General classes **/
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show-d {
+    display: block;
+}
+
+.show-m {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .show-d {
+        display: none;
+    }
+
+    .show-m {
+        display: block;
+    }
+}
+
+.d-df-r {
+    display: flex;
+    flex-direction: row;
+}
+
+.d-df-c {
+    display: flex;
+    flex-direction: column;
+}
+
+.m-df-r {
+    display: none;
+    flex-direction: row;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.m-df-c {
+    display: none;
+    flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.jcsb {
+    justify-content: space-between;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.aic {
+    align-items: center;
+}
+
+/** ************** **/
+
+
+/** Animation **/
+
+/* animate the dots to make them appears one after the other */
+@keyframes animate-dots {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.three-dots-anim {
+    animation: animate-dots 1s ease-in-out infinite;
+}
+
+/** ************** **/
+
+/** Game Phases **/
+
+.phase1-gameIntro {
+    position: absolute;
+    bottom:-25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100vh;
+    gap: 16px;
+    margin: auto;
+    text-align: center;
+
+    > h1 {
+       
+        max-width: 500px;
+    }
+  // Mobile
+  @media screen and (max-width: 768px) {
+    bottom: 13%;
+    text-align: center; 
+    width: 100%; 
+    height: fit-content;
+    > h1 {
+        padding: 24px;
+    }
+  }
+}
+
+.phase2-gameSync {
+  display: none;
+
+  > div {
+    height: 100vh;
+    text-align: center;
+    .d-numberSyncer {
+        font-size: 64px;
+        font-weight: bold;
+        margin: 16px;
+    }
+
+    h2 {
+        position: relative;
+        top: 20px;
+        font-size: 64px;
+    }
+
+    // Desktop
+    &:first-of-type {
+        position: relative;
+        top: 64px;
+        transform: translateY(50%);
+
+        height: fit-content;
+        .d-numberSyncer {
+            font-size: 80px;
+            -webkit-text-stroke: 1px #000000;
+            color: #FBCE51;
+        }
+
+        > p {
+            font-size: 36px;
+            width: 50%;
+            -webkit-text-stroke: 1px #000000;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(20%);
+        width: 80%;
+        height: fit-content;
+        h2 {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, 230%);
+
+            font-size: 32px;
+            -webkit-text-stroke: 1px #000000;
+        }
+
+        > p {
+            -webkit-text-stroke: 1px #000000;
+            &:first-of-type {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, 175%);
+                font-size: 32px;
+            }
+
+            &:last-of-type {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, 535%);
+                font-size: 28px;
+            }
+        }
+
+        // Input container
+        .phase2-gameSync__m-numberSyncer-container {
+            position: relative;
+            top: 70%;
+            left:0;
+            transform: translateY(-50%);
+            height: 45px;
+
+            .phase2-gameSync__m-input-number {
+                outline: none;
+                border: none;
+                width: 40px;
+                height: 100%;
+
+                padding: 16px 38px;
+                background-color: #000;
+                color: #fff;
+                // center the text
+                text-align: center;
+                font-size: 36px;
+                font-family: 'Dimbo';
+                // cancel zoom on mobile
+                -webkit-text-size-adjust: 100%;
+                -moz-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                -o-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+                // cancel scroll on focus
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+
+
+                position: absolute;
+                top:0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            // Make the button green and change its padding on the edges
+            .phase2-gameSync__m-button {
+                font-size: 36px;
+                background: linear-gradient(180deg, #00CE15 45.36%, #00C414 52.04%);
+                padding: 16px 24px;
+                box-shadow: inset 0px -8px 6px #037B0F;
+                margin-left: 220px;
+            }
+        }
+        gap: 16px;
+    }
+  }
+}
+
+.phase3-gameCalibration {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    
+    p {
+        -webkit-text-stroke: 1px #000000;
+        &:last-of-type {
+            position: relative;
+            top: 32px;
+            left:0;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: fit-content;
+        p {
+            display: none;
+        }
+    }
+        
+}
+
+.phase4-gameLoading {
+  display: none;
+
+  &.show {
+    display: flex !important;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        h2, p {
+            display: none;
+        }
+    }
+
+  }
+}
+
+.phase5-gamePlay {
+  display: none;
+
+  > .show-m {
+    &.show {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+  }
+}
+
+.phase6-gameEnd {
+  display: none;
+}
+
+/** ************** **/
+
+/** Game UI **/
+
+.img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: 450px;
+    z-index: 1;
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        &.glow-img {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            transform: scale(1.2);
+            z-index: -1;
+            // animate rotate in infinite without easing
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: scale(1.2) rotate(0deg);
+            }
+
+            100% {
+                transform: scale(1.2) rotate(360deg);
+            }
+        }
+    }
+
+    &.logo--small {
+        top: 60px;
+        width: 200px;
+        height: 200px;
+    }
+
+    &.logo--phase5 {
+        top: 20px;
+        left: 100px;
+        width: 150px;
+        height: 150px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 400px;
+        height: 400px;
+
+        > img.glow-img {
+            display: none;
+        }
+
+        &.logo--small {
+            top: 20px;
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+/* .direction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+} */

@@ -1,0 +1,24 @@
+{
+  "name": "-test-accelerometer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "@splinetool/loader": "^0.9.146",
+    "@vitejs/plugin-basic-ssl": "^0.1.2",
+    "cannon-es": "^0.20.0",
+    "lottie-web": "^5.10.0",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
+    "three": "^0.147.0"
+  }
+}

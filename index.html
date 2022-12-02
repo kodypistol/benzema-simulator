@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+
+    <div class="logo">
+      <img class="logo-img" src="/assets/png/logo.png" alt="Moi">
+      <img class="glow-img" src="/assets/png/glow.png" alt="glow derrière moi pour montrer ma puissance">
+    </div>
+
+    <div class="phase1-gameIntro d-df-c jcc aic">
+      <h1>Deviens le meilleur joueur de la planète frero</h1>
+      <button class="phase1-gameIntro__button"><span>Play</span></button>
+    </div>
+
+    <div class="phase2-gameSync">
+      <div class="show-d d-df-c jcc aic">
+        <h2>Connectez votre mobile</h2>
+        <div class="phase2-gameSync__d-numberSyncer-container">
+          <p class="d-numberSyncer"></p>
+        </div>
+        <p>Pour pouvoir s'entraîner, cela nécessite d'utiliser votre téléphone.</p>
+        <p>Connectez-vous sur le même site avec votre téléphone mobile, 
+          et entrez le code ci-dessous pour vous synchroniser.</p>
+      </div>
+      <div class="show-m m-df-c jcc aic">
+        <h2>Connectez-vous à votre ordinateur.</h2>
+        <p>Pour pouvoir s'entraîner, cela nécessite d'utiliser votre ordinateur (pour voir les cages en gros).</p>
+        <div class="phase2-gameSync__m-numberSyncer-container">
+          <input class="phase2-gameSync__m-input-number" type="tel" maxlength="2" />
+          <button class="phase2-gameSync__m-button"><span>></span></button>
+        </div>
+        <p>Connectez-vous sur le même site avec votre ordinateur, 
+          et entrez le code que vous y trouverez ci-dessous.</p>
+      </div>
+    </div>
+
+    <div class="phase3-gameCalibration">
+      <div class="show-d d-df-c jcc aic">
+        <h2>Calibration<span class="three-dots-anim">...</span></h2>
+        <p>Calibrez votre téléphone en le positionnant à la verticale à l'intérieur 
+          de votre chaussure ou votre chaussette.</p>
+        <p>Attention ! Il doit être perpendiculairement vertical par rapport au sol (aucune idée de ce que cela signifie).</p>
+      </div>
+
+      <div class="show-m">
+        <h2>Calibration<span class="three-dots-anim">...</span></h2>
+        <p>Calibrez votre téléphone en le positionnant à la verticale à l'intérieur 
+          de votre chaussure ou votre chaussette.</p>
+        <p>Attention ! Il doit être perpendiculairement vertical par rapport au sol (aucune idée de ce que cela signifie).</p>
+      </div>
+    </div>
+
+    <div class="phase4-gameLoading d-df-c aic jcc">
+      <h2>C'EST BON TU ES PRÊT</h2>
+      <p>C'est maintenant que tu dois tout prouver, la France entière te regarde.</p>
+      <h3>Chargement<span class="three-dots-anim">...</span></h3>
+    </div>
+
+    <div class="phase5-gamePlay">
+      <div class="show-d">
+        <canvas id="webgl"></canvas>
+      </div>
+      <div class="show-m">
+        <p>C'est sur l'ordi que ça se passe !!! vas tirer gros porc!!!</p>
+      </div>
+    </div>
+
+    <div class="img-bg">
+      <img src="/assets/png/bg-img.png" alt="Stade">
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
